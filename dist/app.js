@@ -17,6 +17,8 @@ const menuBtn = document.querySelector("#menuBtn");
 const sidebar = document.querySelector("#sidebar");
 const scrim = document.querySelector("#scrim");
 const pad = (value) => String(value).padStart(2, "0");
+let activeIndex = 0;
+let wheelLocked = false;
 
 function closeMenu() {
   sidebar.classList.remove("open");
@@ -54,6 +56,7 @@ function groupFor(indexValue) {
 function setActive(indexValue) {
   const title = titles[indexValue];
   if (!title) return;
+  activeIndex = indexValue;
   currentGroup.textContent = groupFor(indexValue);
   currentTitle.textContent = title;
   currentNumber.textContent = pad(indexValue + 1);
@@ -64,6 +67,17 @@ function setActive(indexValue) {
   });
   document.title = pad(indexValue + 1) + " · " + title + " | MD Decision Lab";
   history.replaceState(null, "", "#slide-" + (indexValue + 1));
+}
+
+function moveToSlide(indexValue, behavior = "smooth") {
+  const nextIndex = Math.max(0, Math.min(sections.length - 1, indexValue));
+  activeIndex = nextIndex;
+  setActive(nextIndex);
+  sections[nextIndex]?.scrollIntoView({ block: "start", behavior });
+}
+
+function usesPagedNavigation() {
+  return window.matchMedia("(min-width: 961px)").matches;
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -83,8 +97,29 @@ menuBtn.addEventListener("click", () => {
 });
 scrim.addEventListener("click", closeMenu);
 window.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+window.addEventListener("keydown", (event) => {
+  if (!usesPagedNavigation() || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
+  if (event.target instanceof HTMLElement && event.target.closest("input, textarea, select, button, [contenteditable='true']")) return;
+  let nextIndex = null;
+  if (["ArrowDown", "PageDown"].includes(event.key) || (event.key === " " && !event.shiftKey)) nextIndex = activeIndex + 1;
+  if (["ArrowUp", "PageUp"].includes(event.key) || (event.key === " " && event.shiftKey)) nextIndex = activeIndex - 1;
+  if (event.key === "Home") nextIndex = 0;
+  if (event.key === "End") nextIndex = sections.length - 1;
+  if (nextIndex === null) return;
+  event.preventDefault();
+  moveToSlide(nextIndex, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+});
+window.addEventListener("wheel", (event) => {
+  if (!usesPagedNavigation() || event.ctrlKey || Math.abs(event.deltaY) < 18) return;
+  if (event.target instanceof HTMLElement && event.target.closest(".sidebar, .toc")) return;
+  event.preventDefault();
+  if (wheelLocked) return;
+  wheelLocked = true;
+  moveToSlide(activeIndex + (event.deltaY > 0 ? 1 : -1), window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+  window.setTimeout(() => { wheelLocked = false; }, 720);
+}, { passive: false });
 fullscreenBtn.addEventListener("click", async () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen());
 
 const initial = Math.max(0, Math.min(sections.length - 1, Number((location.hash.match(/^#slide-(\d+)$/) || [0, 1])[1]) - 1));
 setActive(initial);
-if (location.hash) requestAnimationFrame(() => sections[initial]?.scrollIntoView({ block: "start" }));
+if (location.hash) requestAnimationFrame(() => moveToSlide(initial, "auto"));
