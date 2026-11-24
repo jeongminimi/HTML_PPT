@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050505" />
   <meta name="description" content="판매·재고 데이터를 판단과 실행으로 연결하는 MD Decision Lab 프로젝트" />
   <title>MD Decision Lab · Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=20261109-strategy-image-4" />
+  <link rel="stylesheet" href="styles.css?v=20261109-season-planning-v2" />
 </head>
 <body>
   <div class="app-shell">
@@ -27,15 +27,15 @@
       <header class="topbar">
         <button type="button" id="menuBtn" class="icon-button menu-button" aria-label="목차 열기" aria-expanded="false"><span></span><span></span><span></span></button>
         <div class="current-location"><span id="currentGroup">소개</span><strong id="currentTitle">표지</strong></div>
-        <div class="page-count"><strong id="currentNumber">01</strong><span>/ 19</span></div>
+        <div class="page-count"><strong id="currentNumber">01</strong><span>/ 16</span></div>
       </header>
 
       <div class="slide-stream" id="slideStream">
         <section class="story-section cover" id="slide-1" data-index="0" data-title="표지">
           <div class="story-inner">
             <div class="section-meta"><span>MD DECISION LAB</span><b>01</b></div>
-            <header class="story-heading"><h1>데이터 파악은 단숨에,<br><em>다음 시즌 예측은 확실하게</em></h1><p>복잡한 판매·재고 데이터를 한눈에 읽고, 실행 전 손익과 다음 시즌 준비 물량까지 비교하는 MD 의사결정 도구입니다.</p></header>
-            <div class="story-body"><div class="cover-flow"><span>상품 탐색</span><i></i><span>전략 계산</span><i></i><span>판단 기록</span><i></i><span>시즌 기획</span></div><span class="pill pill-accent">MD DECISION LAB</span></div>
+            <header class="story-heading"><h1>데이터 파악은 단숨에,<br><em>다음 시즌 예측은 확실하게</em></h1><p>복잡한 판매·재고 데이터를 한눈에 읽고, 실행 전 손익과 다음 시즌 준비 물량까지 비교하는 MD 의사결정 도구</p></header>
+            <div class="story-body"><div class="cover-flow"><span>상품 탐색</span><i></i><span>전략 계산</span><i></i><span>판단 기록</span><i></i><span>시즌 기획</span></div></div>
           </div>
         </section>
 
@@ -52,7 +52,7 @@
 
         <section class="story-section" id="slide-3" data-index="2" data-title="개발 기록">
           <div class="story-inner"><div class="section-meta"><span>개발 기록</span><b>03</b></div>
-            <header class="story-heading"><h1>단숨에 기획하고,<br><em>빠르게 빌드하라</em></h1><p>현장 경험에서 문제를 정의한 뒤, 실제 거래 연결과 판단 기능 검증을 반복하며 MD 업무 흐름으로 완성했습니다.</p></header>
+            <header class="story-heading"><h1>기획부터 <em>구현까지</em></h1><p>현장 경험에서 문제를 정의한 뒤, 실제 거래 연결과 판단 기능 검증을 반복하며 MD 업무 흐름으로 완성했습니다.</p></header>
             <div class="story-body"><ol class="timeline">
               <li><time>10.27</time><div><strong>판단 기반 구축</strong><p>상품·일별 판매·판단 기록 DB와 CSV 업로드, 재고 위험 규칙을 연결해 입력 → 분석 → 저장 흐름을 만들었습니다.</p></div></li>
               <li><time>10.28</time><div><strong>실거래 연결</strong><p>H&M 거래를 상품·일자별로 집계하고 2019·2020 비교와 9월 회고를 추가했습니다. 재고·원가는 별도 운영값으로 분리했습니다.</p></div></li>
@@ -63,85 +63,115 @@
           </div>
         </section>
 
-        <section class="story-section" id="slide-4" data-index="3" data-title="원본 데이터">
-          <div class="story-inner"><div class="section-meta"><span>데이터 설계 · 원본</span><b>04</b></div>
-            <header class="story-heading"><h1>상품과 거래를 연결할 수 있는<br><em>H&M 원본 데이터</em></h1><p>상품 번호(article_id)를 공통 열로 사용해 같은 상품의 거래를 날짜별 판매 기록으로 집계했습니다.</p></header>
-            <div class="story-body"><div class="grid grid-2 data-grid">
-              <article class="data-panel"><div class="panel-title"><span>transactions_train.csv</span><small>거래 데이터</small></div><div class="table-wrap"><table><thead><tr><th>구매일</th><th>상품 번호</th><th>가격값</th><th>채널</th></tr></thead><tbody><tr><td>2018-09-20</td><td>0663713001</td><td>0.050847</td><td>2</td></tr><tr><td>2018-09-20</td><td>0541518023</td><td>0.030491</td><td>2</td></tr><tr><td>2018-09-20</td><td>0505221004</td><td>0.015237</td><td>2</td></tr></tbody></table></div></article>
-              <article class="data-panel"><div class="panel-title"><span>articles.csv</span><small>상품 데이터</small></div><div class="table-wrap"><table><thead><tr><th>상품 번호</th><th>상품명</th><th>종류</th></tr></thead><tbody><tr><td>0663713001</td><td>Atlanta Push Body Harlow</td><td>Underwear body</td></tr><tr><td>0541518023</td><td>Rae Push (Melbourne) 2p</td><td>Bra</td></tr><tr><td>0505221004</td><td>Inca Jumper</td><td>Sweater</td></tr></tbody></table></div></article>
-            </div><div class="metric-row"><article class="metric-card"><strong>31,788,324건</strong><span>거래 기록</span></article><article class="metric-card"><strong>105,542종</strong><span>상품 정보</span></article><article class="metric-card"><strong>article_id</strong><span>연결 기준 키</span></article></div></div>
+        <section class="story-section" id="slide-4" data-index="3" data-title="데이터 파이프라인">
+          <div class="story-inner pipeline-inner"><div class="section-meta"><span>데이터 파이프라인 · SOURCE TO DECISION</span><b>04</b></div>
+            <header class="story-heading"><h1>실제 판매를 MD 판단 데이터로 바꾸는 <em>7단계 파이프라인</em></h1><p>H&amp;M 원본 거래를 상품별 판매 기록으로 정리하고, 원본에 없는 재고·발주·원가 조건을 별도로 생성한 뒤 전수 검증해 분석 DB에 연결했습니다.</p></header>
+            <div class="story-body pipeline-body">
+              <div class="pipeline-flow" aria-label="실제 판매 데이터에서 MD 의사결정 화면까지 이어지는 7단계 파이프라인">
+                <svg class="pipeline-turn" viewBox="0 0 1000 404" preserveAspectRatio="none" aria-hidden="true">
+                  <defs><marker id="pipeline-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#51514c"></path></marker></defs>
+                  <path d="M833 160 V202 H125 V244" fill="none" stroke="#42423e" stroke-width="2" marker-end="url(#pipeline-arrow)"></path>
+                </svg>
+                <div class="pipeline-row pipeline-row-top">
+                  <article class="pipeline-step pipeline-source">
+                    <span class="pipeline-number">01</span><h2>H&amp;M 원본 데이터</h2>
+                    <p>transactions_train.csv<br>articles.csv</p>
+                    <strong class="pipeline-result">31,788,324건 · 105,542종</strong>
+                  </article>
+                  <article class="pipeline-step">
+                    <span class="pipeline-number">02</span><h2>분석 범위 선정</h2>
+                    <p>여성복 3개 섹션<br>2019·2020년 7~8월<br>기준일 2020-08-31</p>
+                  </article>
+                  <article class="pipeline-step">
+                    <span class="pipeline-number">03</span><h2>정제·집계</h2>
+                    <p>article_id를 문자열로 보존<br>상품·일자·채널 단위 집계</p>
+                    <strong class="pipeline-result">90,754행 · 286종</strong>
+                  </article>
+                </div>
+                <div class="pipeline-row pipeline-row-bottom">
+                  <article class="pipeline-step">
+                    <span class="pipeline-number">04</span><h2>운영 사례 선별</h2>
+                    <p>판매 변화 유형 분류<br>8/31 이후 판매는 선정에 미사용</p>
+                    <strong class="pipeline-result">46종</strong>
+                  </article>
+                  <article class="pipeline-step pipeline-simulated">
+                    <span class="pipeline-number">05</span><h2>가상 운영 조건 생성</h2>
+                    <p>재고·발주·리드타임<br>판매가·원가·상품 상태</p>
+                    <div class="pipeline-counts"><strong>상품 정책 <b>46행</b></strong><strong>재고 수불 <b>3,864행</b></strong><strong>발주 기록 <b>92행</b></strong><strong>가격·원가 구간 <b>52행</b></strong></div>
+                  </article>
+                  <article class="pipeline-step pipeline-qa">
+                    <span class="pipeline-number">06</span><h2>전수 QA</h2>
+                    <p>SKU·수불·발주↔입고<br>음수 재고·정보 누출 검사</p>
+                    <strong class="pipeline-result">검증 실패 0건</strong>
+                  </article>
+                  <article class="pipeline-step pipeline-database">
+                    <span class="pipeline-number">07</span><h2>SQLite 분석 DB</h2>
+                    <p>판매 변화·재고 소진<br>전략 손익·판단·시즌 기획</p>
+                    <strong class="pipeline-result">MD 의사결정 화면</strong>
+                  </article>
+                </div>
+              </div>
+              <p class="pipeline-disclaimer">H&amp;M 원본에서 사용한 실제 값은 상품 정보와 판매 기록이며, 재고·발주·리드타임·원화 판매가·원가는 관측 판매를 제약조건으로 생성한 운영 시뮬레이션 값입니다.</p>
+            </div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-5" data-index="4" data-title="분석·정리 과정">
-          <div class="story-inner"><div class="section-meta"><span>데이터 설계 · 정리 과정</span><b>05</b></div>
-            <header class="story-heading"><h1>판매 기록을 MD가 <span class="no-break">판단할 수 있는</span><br><em>상품 데이터로 바꿨다</em></h1><p>대량 거래에서 분석 기간과 상품군을 좁히고, 상품 번호의 앞자리 0을 보존한 채 날짜별 판매량을 계산했습니다.</p></header>
-            <div class="story-body"><div class="process-flow">
-              <article><strong>31,788,324</strong><span>원본 거래</span><p>상품 번호와 구매일을 읽고 식별자의 앞자리 0을 보존</p></article><b>→</b>
-              <article><strong>286</strong><span>비교 대상 상품</span><p>2019·2020년 7–8월 여성복 3개 섹션을 동일 기준으로 선정</p></article><b>→</b>
-              <article><strong>46</strong><span>운영 사례 상품</span><p>판매 변화 유형을 나누고 판단 기능 검증용 운영 자료 연결</p></article>
-            </div><div class="support-strip"><span>부족한 운영값 보완</span><strong>재고 수불</strong><strong>발주일</strong><strong>입고 소요일</strong><strong>원화 판매가·원가</strong></div></div>
+        <section class="story-section" id="slide-5" data-index="4" data-title="사례 선정·판단 검증">
+          <div class="story-inner"><div class="section-meta"><span>사례 선정 · 판단 검증</span><b>05</b></div>
+            <header class="story-heading"><h1 class="case-validation-title"><em>46종</em>으로 검증한 네 가지 MD 판단</h1><p>46종은 전체 상품을 대표하는 표본이 아니라, 판매 변화 유형을 바탕으로 실제 업무 판단 흐름을 점검하기 위해 선정한 운영 사례입니다.</p></header>
+            <div class="story-body case-validation-body">
+              <div class="case-selection-flow" aria-label="원본 거래에서 기능 검증용 운영 사례까지의 선정 흐름">
+                <article><strong>31,788,324건</strong><span>원본 거래</span><p>상품 번호와 구매일을 기준으로 정리</p></article><b aria-hidden="true">→</b>
+                <article><strong>286종</strong><span>비교 대상</span><p>2019·2020년 7~8월 · 여성복 3개 섹션</p></article><b aria-hidden="true">→</b>
+                <article class="case-selection-final"><strong>46종</strong><span>운영 사례</span><p>판매 변화 유형을 나눠 판단 기능 검증에 활용</p></article>
+              </div>
+              <div class="case-validation-heading"><h2>이 사례로 확인한 판단 시나리오</h2><p>상품을 찾는 단계부터 전략·시즌 기획까지, 각 질문에 필요한 지표를 연결했습니다.</p></div>
+              <div class="grid grid-4 case-validation-grid">
+                <article class="info-card"><span class="card-number">01</span><h3>무엇을 먼저 볼까?</h3><strong class="keyline">동종 순위 · 최근 판매 변화</strong><p>우선 확인할 상품을 구분합니다.</p></article>
+                <article class="info-card"><span class="card-number">02</span><h3>추가 매입이 필요한가?</h3><strong class="keyline">현재 재고 · 판매 속도 · 입고일</strong><p>예상 소진일과 입고 시점을 비교합니다.</p></article>
+                <article class="info-card"><span class="card-number">03</span><h3>어떤 전략이 유리한가?</h3><strong class="keyline">전략별 예상 판매량</strong><p>매출총이익과 잔여 재고를 비교합니다.</p></article>
+                <article class="info-card"><span class="card-number">04</span><h3>다음 시즌 무엇을 준비할까?</h3><strong class="keyline">유사 상품의 두 시즌 흐름</strong><p>기획 후보와 준비 물량을 검토합니다.</p></article>
+              </div>
+              <p class="case-validation-note">46종은 시장 전체를 대표하거나 통계적 효과를 입증하기 위한 표본이 아니라, 기능과 판단 흐름을 확인하기 위한 운영 사례입니다.</p>
+            </div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-6" data-index="5" data-title="분석 질문">
-          <div class="story-inner"><div class="section-meta"><span>분석 질문</span><b>06</b></div>
-            <header class="story-heading"><h1>MD가 실제로 답해야 할<br><em>네 가지 질문</em></h1><p>판매량 자체보다 다음 조치를 결정하는 데 필요한 비교 기준을 먼저 정의했습니다.</p></header>
-            <div class="story-body"><div class="grid grid-4 question-grid">
-              <article class="info-card"><span class="card-number">01</span><h3>무엇을 먼저 볼까?</h3><strong class="keyline">동종 순위 · 최근 판매 변화</strong><p>우선 확인 상품</p></article>
-              <article class="info-card"><span class="card-number">02</span><h3>추가 매입이 필요한가?</h3><strong class="keyline">현재 재고 · 판매 속도 · 입고일</strong><p>소진 예상일</p></article>
-              <article class="info-card"><span class="card-number">03</span><h3>어떤 전략이 유리한가?</h3><strong class="keyline">전략별 예상 판매량</strong><p>매출총이익 · 잔여 재고</p></article>
-              <article class="info-card"><span class="card-number">04</span><h3>다음 시즌 무엇을 준비할까?</h3><strong class="keyline">유사 상품의 두 시즌 흐름</strong><p>기획 후보 · 준비 물량</p></article>
+        <section class="story-section" id="slide-6" data-index="5" data-title="발견한 수치">
+          <div class="story-inner"><div class="section-meta"><span>발견한 수치</span><b>06</b></div>
+            <header class="story-heading"><h1>동종 1위여도<br><em>최근 판매 추세를 함께 본다</em></h1><p>판매 순위는 경쟁 상품 안에서의 위치를, 기간 비교는 수요의 변화를 보여줍니다. 두 지표를 함께 확인해야 발주 판단을 놓치지 않습니다.</p></header>
+            <div class="story-body"><div class="split evidence-split sales-evidence-split">
+              <figure class="evidence-frame sales-evidence-frame"><img src="assets/evidence/peer-sales-ranking.png" alt="Bailey 상품의 14일·7일 동종 판매 순위와 최근 판매량, 재고 및 입고 조건을 보여주는 화면" loading="lazy"><figcaption>Bailey · 기준일 2020-08-31 · 동종 상품 비교 및 물량 검토</figcaption></figure>
+              <div class="insight-panel sales-insight-panel">
+                <span class="pill">BAILEY · 동종 28종 비교</span>
+                <h3>최근 7일 판매량<br><em>44% 감소</em></h3>
+                <div class="sales-reading">
+                  <article><span>최근 14일</span><strong>1위 / 28종</strong><small>1,636개 · 중앙값 242개</small></article>
+                  <article><span>최근 7일</span><strong>1위 / 26종</strong><small>589개 · 직전 주 1,047개</small></article>
+                </div>
+                <div class="callout sales-interpretation"><strong>그래프 읽기</strong><p>가로 막대는 상품별 판매량 비교입니다. 1위를 유지해도 최근 판매가 줄면 수요 둔화를 고려해야 합니다.</p></div>
+                <div class="sales-stock-note"><strong>발주 검토</strong><p>현재고 2개·리드타임 28일·계획 입고를 반영한 추가 발주 검토 기준은 0개입니다. 확정 발주량은 아닙니다.</p></div>
+                <p class="sales-data-note">판매 순위는 H&amp;M 관측 판매 기준이며, 재고·입고·발주 검토는 운영 시뮬레이션 값입니다.</p>
+              </div>
             </div></div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-7" data-index="6" data-title="발견한 수치">
-          <div class="story-inner"><div class="section-meta"><span>발견한 수치</span><b>07</b></div>
-            <header class="story-heading"><h1>순위가 아닌 <em>추세</em>를 봅니다</h1><p>동종 상품 순위와 최근 판매 증감률을 교차 확인해 ‘누적 인기’가 현재 수요로 이어지는지 검증했습니다.</p></header>
-            <div class="story-body"><div class="split evidence-split">
-              <figure class="evidence-frame"><img src="assets/evidence/image3.png" alt="동종 상품 판매 비교 화면" loading="lazy"><figcaption>동종 상품 안에서 최근 14일과 7일 판매 순위를 함께 확인</figcaption></figure>
-              <div class="insight-panel"><span class="pill">BAILEY · RECENT 7 DAYS</span><h3>판매 속도 <em>44% 감소</em></h3><div class="bar-row"><span>직전 7일</span><div><i style="width:100%"></i></div><strong>1,047개</strong></div><div class="bar-row"><span>최근 7일</span><div><i class="accent" style="width:56%"></i></div><strong>589개</strong></div><div class="callout"><strong>재발주 판단 기준의 변화</strong><p>누적 1위라는 타이틀보다 단기 수요 감소를 먼저 반영해 추가 매입 물량을 재조정하거나 보류합니다.</p></div></div>
-            </div></div>
-          </div>
-        </section>
-
-        <section class="story-section" id="slide-8" data-index="7" data-title="프로그램 화면">
-          <div class="story-inner"><div class="section-meta"><span>프로그램 구조</span><b>08</b></div>
-            <header class="story-heading"><h1>상품을 읽고,<br><em>다음 조치까지 연결하다</em></h1><p>대표 상품과 핵심 지표를 먼저 확인한 뒤, 우선 검토 상품·전략 계산·판단 기록으로 이어지는 하나의 업무 흐름입니다.</p></header>
-            <div class="story-body"><div class="workflow-map"><div class="workflow-line"></div>
-              <article><span>01</span><h3>상품 신호 읽기</h3><p>대표 상품과 판매·재고 지표를 한 화면에서 확인해 업무의 시작점을 잡습니다.</p><strong>현황 파악</strong></article>
-              <article><span>02</span><h3>우선 상품 판단</h3><p>판매 증감률·소진 예상일·동종 순위로 먼저 검토할 상품과 원인을 좁힙니다.</p><strong>우선순위</strong></article>
-              <article><span>03</span><h3>전략 비교와 기록</h3><p>할인·노출·매입안의 예상 이익과 재고를 비교하고 선택 근거를 저장합니다.</p><strong>실행 전 검증</strong></article>
-            </div></div>
-          </div>
-        </section>
-
-        <section class="story-section" id="slide-9" data-index="8" data-title="다음 활용">
-          <div class="story-inner"><div class="section-meta"><span>다음 활용</span><b>09</b></div>
-            <header class="story-heading"><h1>파일 업로드 한 번,<br><em>복잡한 실무 계산은 자동으로</em></h1><p>정립된 분석 기준을 자사 판매·상품 파일에도 적용할 수 있도록 입력 구조를 분리했습니다.</p></header>
-            <div class="story-body"><div class="split upload-layout">
-              <figure class="evidence-frame"><img src="assets/evidence/image4.png" alt="상품 판매 파일 업로드 화면" loading="lazy"><figcaption>상품·일별 판매 파일을 연결해 새 작업공간 생성</figcaption></figure>
-              <div class="stack"><article class="info-card"><span class="card-number">01</span><h3>DATA 호환</h3><strong class="keyline">자사 판매 · 상품 파일</strong><p>CSV 또는 XLSX를 연결해 동일한 분석 흐름을 시작합니다.</p></article><article class="info-card"><span class="card-number">02</span><h3>RISK 관리</h3><strong class="keyline">판매 속도 · 재고 소진</strong><p>최근 수요와 재고, 입고 일정을 함께 비교합니다.</p></article><article class="info-card"><span class="card-number">03</span><h3>HISTORY 기록</h3><strong class="keyline">의사결정 히스토리</strong><p>판단 당시 수치와 실행 결과를 다음 시즌 기준으로 남깁니다.</p></article></div>
-            </div><div class="roadmap"><span>SCALE-UP ROADMAP</span><strong>실제 발주·비용 데이터 자동 연동 → 업무 흐름 자동화</strong></div></div>
-          </div>
-        </section>
-
-        <section class="story-section" id="slide-10" data-index="9" data-title="핵심 기능 안내">
-          <div class="story-inner"><div class="section-meta"><span>핵심 기능 안내</span><b>10</b></div>
-            <header class="story-heading"><h1>MD가 쓰는 기능을<br><em>업무 순서로 보기</em></h1><p>상품 탐색에서 다음 시즌 준비까지 끊기지 않는 다섯 단계로 구성했습니다.</p></header>
+        <section class="story-section" id="slide-7" data-index="6" data-title="MD 판단 흐름">
+          <div class="story-inner"><div class="section-meta"><span>핵심 기능 · MD 판단 흐름</span><b>07</b></div>
+            <header class="story-heading"><h1>상품을 찾고, 비교하고,<br><em>실행 전 판단까지</em></h1><p>상품 탐색부터 시즌 기획까지, MD의 판단이 이어지는 다섯 단계를 먼저 살펴봅니다.</p></header>
             <div class="story-body"><div class="step-grid">
-              <article class="info-card"><span class="card-number">01</span><h3>찾기</h3><strong class="keyline">검색 · 정렬</strong><p>오늘 먼저 볼 상품 확인</p></article>
-              <article class="info-card"><span class="card-number">02</span><h3>비교</h3><strong class="keyline">동종 순위 · 추세</strong><p>소진일과 입고일 계산</p></article>
-              <article class="info-card"><span class="card-number">03</span><h3>선택</h3><strong class="keyline">할인 · 노출 · 매입</strong><p>이익과 재고 비교</p></article>
-              <article class="info-card"><span class="card-number">04</span><h3>기록</h3><strong class="keyline">이유 · 실행 계획</strong><p>이후 결과 확인</p></article>
-              <article class="info-card"><span class="card-number">05</span><h3>기획</h3><strong class="keyline">시즌 흐름</strong><p>다음 준비 물량 기록</p></article>
+              <article class="info-card"><span class="card-number">01</span><h3>찾기</h3><strong class="keyline">검색 · 정렬</strong><p>검토할 상품을 좁힙니다.</p></article>
+              <article class="info-card"><span class="card-number">02</span><h3>비교</h3><strong class="keyline">판매 추세 · 동종 순위</strong><p>수요와 재고 신호를 읽습니다.</p></article>
+              <article class="info-card"><span class="card-number">03</span><h3>판단</h3><strong class="keyline">재고 · 입고 · 손익</strong><p>전략 대안을 수치로 비교합니다.</p></article>
+              <article class="info-card"><span class="card-number">04</span><h3>기록</h3><strong class="keyline">이유 · 실행 계획</strong><p>선택 근거와 결과를 남깁니다.</p></article>
+              <article class="info-card"><span class="card-number">05</span><h3>기획</h3><strong class="keyline">시즌 흐름</strong><p>다음 시즌 준비 물량을 검토합니다.</p></article>
             </div></div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-11" data-index="10" data-title="오늘의 할 일">
-          <div class="story-inner"><div class="section-meta"><span>핵심 기능 01 · 오늘의 할 일</span><b>11</b></div>
+        <section class="story-section" id="slide-8" data-index="7" data-title="오늘의 할 일">
+          <div class="story-inner"><div class="section-meta"><span>핵심 기능 01 · 오늘의 할 일</span><b>08</b></div>
             <header class="story-heading"><h1>46종 중 <em>40종</em>을<br>우선 확인 대상으로 정리했다</h1><p>판매 변화와 재고 위험을 자동 계산해 목록을 훑기 전에 확인해야 할 상품부터 보여줍니다.</p></header>
             <div class="story-body"><div class="split feature-split">
               <figure class="evidence-frame"><img src="assets/evidence/image11.png" alt="상품 사진과 핵심 지표에서 우선 확인 상품으로 이어지는 최신 오늘의 할 일 화면" loading="lazy"><figcaption>대표 상품·핵심 지표·우선 확인 목록을 하나의 흐름으로 연결</figcaption></figure>
@@ -150,66 +180,146 @@
           </div>
         </section>
 
-        <section class="story-section" id="slide-12" data-index="11" data-title="전체 상품">
-          <div class="story-inner"><div class="section-meta"><span>핵심 기능 02 · 전체 상품</span><b>12</b></div>
+        <section class="story-section" id="slide-9" data-index="8" data-title="전체 상품">
+          <div class="story-inner"><div class="section-meta"><span>핵심 기능 02 · 전체 상품</span><b>09</b></div>
             <header class="story-heading"><h1>상품을 찾고<br><em>최근 판매와 재고를 확인한다</em></h1><p>상품명·번호·종류·섹션 검색과 판매량·재고 정렬로 검토 범위를 빠르게 좁힙니다.</p></header>
             <div class="story-body"><div class="split feature-split">
-              <figure class="evidence-frame"><img src="assets/evidence/image7.png" alt="전체 상품 검색과 정렬 화면" loading="lazy"><figcaption>10만여 상품에서 이름과 분류로 대상을 검색</figcaption></figure>
-              <div class="stack"><article class="info-card"><h3>검색</h3><strong class="keyline">상품명 · 번호 · 종류 · 섹션</strong><p>같은 이름의 상품도 식별자와 카테고리로 구분합니다.</p></article><article class="info-card"><h3>정렬</h3><strong class="keyline">최근 판매량 · 현재 재고</strong><p>판매량과 재고의 오름차순·내림차순으로 대상을 좁힙니다.</p></article><div class="callout"><strong>업무에서 얻는 의미</strong><p>많은 상품 속에서 조사할 대상을 찾은 뒤 상세 판단 화면으로 바로 연결합니다.</p></div></div>
+              <figure class="evidence-frame product-evidence-frame">
+                <div class="product-image-wrap">
+                  <img src="assets/evidence/image7.png?v=20261109-product-annotations" alt="105,542종의 전체 상품을 검색하고 최근 30일 판매와 재고순으로 확인하는 화면" loading="lazy">
+                  <span class="product-highlight product-highlight-search" aria-hidden="true"><b>01</b></span>
+                  <span class="product-highlight product-highlight-details" aria-hidden="true"><b>02</b></span>
+                  <span class="product-highlight product-highlight-metrics" aria-hidden="true"><b>03</b></span>
+                </div>
+                <figcaption>상품 검색 · 최근 30일 판매 · 재고 기준 정렬</figcaption>
+              </figure>
+              <ol class="product-explanations">
+                <li><span>01</span><h2>검색 범위 좁히기</h2><strong>상품명 · 번호 · 종류 · 섹션</strong><p>검색 조건과 결과 건수를 확인해 검토할 상품을 찾습니다.</p></li>
+                <li><span>02</span><h2>상품 식별</h2><strong>상품명 · 상품 번호 · 종류 · 섹션</strong><p>비슷한 상품을 기본 정보로 구분해 원하는 상품을 확인합니다.</p></li>
+                <li><span>03</span><h2>판매·재고 비교</h2><strong>최근 30일 판매 · 현재 재고</strong><p>지표를 정렬해 판매 흐름과 재고 수준에 따라 확인 순서를 바꿉니다.</p></li>
+              </ol>
             </div></div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-13" data-index="12" data-title="재고 판단">
-          <div class="story-inner"><div class="section-meta"><span>핵심 기능 03 · 재고 판단</span><b>13</b></div>
-            <header class="story-heading"><h1>소진 예상일을<br><em>입고 소요일과 비교한다</em></h1><p>판매 속도만 보고 발주하지 않고, 예정 입고가 도착할 때까지 현재 재고가 버틸 수 있는지 확인합니다.</p></header>
-            <div class="story-body"><div class="inventory-equation"><article class="metric-card"><strong>2개</strong><span>현재 재고</span></article><b>÷</b><article class="metric-card"><strong>28일</strong><span>입고 소요일</span></article><b>→</b><article class="metric-card"><strong>0.1일 미만</strong><span>재고 소진 예상</span></article></div><div class="alert-panel"><span>STOCK GAP</span><strong>입고 전 재고 공백 발생 가능</strong><p>30일 총 공급량이 충분해 보여도 입고 전 판매가 멈추는 날짜를 따로 계산해 물량 확보 또는 판매 조정을 검토합니다.</p></div></div>
+        <section class="story-section" id="slide-10" data-index="9" data-title="재고 판단">
+          <div class="story-inner"><div class="section-meta"><span>핵심 기능 03 · 재고 판단</span><b>10</b></div>
+            <header class="story-heading"><h1>재고 공백을<br><em>입고 계획과 함께 확인한다</em></h1><p>기준일을 중심으로 재고 수불과 발주·입고 일정을 실제 판매 흐름에 겹쳐 보고, 공급이 부족해지는 시점과 이후 재고를 확인합니다.</p></header>
+            <div class="story-body stock-observation-body">
+              <div class="stock-observation-layout">
+                <figure class="evidence-frame stock-observation-frame">
+                  <div class="stock-image-wrap">
+                    <img src="assets/evidence/stock-replenishment-observation.png" alt="기준일 전후 재고 그래프, 계획 발주·입고 표, 이후 관측 판매 요약이 표시된 재고 판단 화면" loading="lazy">
+                    <span class="stock-highlight stock-highlight-chart" aria-hidden="true"><b>01</b></span>
+                    <span class="stock-highlight stock-highlight-orders" aria-hidden="true"><b>02</b></span>
+                    <span class="stock-highlight stock-highlight-summary" aria-hidden="true"><b>03</b></span>
+                  </div>
+                  <figcaption>실행 기록 및 이후 관찰 · 기준일 2020-08-31</figcaption>
+                </figure>
+                <ol class="stock-explanations">
+                  <li><span class="card-number">01</span><h2>재고 흐름 확인</h2><strong class="keyline">일별 재고 · 판매 수요</strong><p>기준일 이후 재고 공백과 회복 시점을 확인합니다.</p></li>
+                  <li><span class="card-number">02</span><h2>발주·입고 일정</h2><strong class="keyline">발주일 · 입고 예정일 · 수량</strong><p>입고 전후 공급 가능 시점을 나눠 살펴봅니다.</p></li>
+                </ol>
+                <aside class="stock-explanation-callout"><h2>이후 관측 결과</h2><strong class="keyline">판매 1,183개 · 공급 가능 2,537개</strong><p>계획 대비 930개 부족하며, 첫 부족 시점은 2020-09-01입니다.</p></aside>
+              </div>
+              <p class="stock-observation-note">화면의 재고·발주·입고 수치는 H&amp;M 원본 관측값이 아니라, 관측 판매를 제약조건으로 생성한 운영 시뮬레이션 예시입니다.</p>
+            </div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-14" data-index="13" data-title="전략 입력">
-          <div class="story-inner"><div class="section-meta"><span>핵심 기능 04 · 전략 입력</span><b>14</b></div>
-            <header class="story-heading"><h1>MD가 조치와 예상 판매량을<br><em>직접 바꾼다</em></h1><p>가격 할인·온라인 기획전·상품 노출·라이브·추가 매입 중 조치를 고르고, 전략 적용 후 판매량을 가정합니다.</p></header>
+        <section class="story-section" id="slide-11" data-index="10" data-title="전략 입력">
+          <div class="story-inner"><div class="section-meta"><span>핵심 기능 04 · 전략 입력</span><b>11</b></div>
+            <header class="story-heading"><h1>MD가 조치와 예상 판매량을 <em>직접 바꾼다</em></h1><p>가격 할인·온라인 기획전·상품 노출·라이브·추가 매입 중 조치를 고르고, 전략 적용 후 판매량을 가정합니다.</p></header>
             <div class="story-body"><div class="split feature-split">
-              <figure class="evidence-frame strategy-input-evidence"><img src="assets/evidence/strategy-input-full.png" alt="전략 선택부터 예상 판매량과 손익 비교까지 표시한 판매 전략 입력 화면" loading="lazy"><figcaption>전략 선택 → 예상 판매량 입력 → 매출총이익·잔여 재고 비교</figcaption></figure>
-              <div class="stack"><article class="info-card"><span class="card-number">01</span><h3>선택</h3><strong class="keyline">판매·운영 전략 설정</strong><p>재고 위험과 판매 추세, 재발주 가능 여부를 참고해 할인·기획전·노출·매입안을 고릅니다.</p></article><article class="info-card"><span class="card-number">02</span><h3>입력</h3><strong class="keyline">30일 예상 판매량과 조건</strong><p>7·14·30일 판매, 동종 순위, 가용 재고와 입고 일정을 근거로 가정을 입력합니다.</p></article><div class="callout"><strong>참여형 시뮬레이션</strong><p>프로그램이 답을 대신 정하지 않고, MD가 세운 가정을 계산 가능한 조건으로 바꿉니다.</p></div></div>
+              <figure class="evidence-frame strategy-input-evidence">
+                <div class="strategy-image-wrap">
+                  <img id="strategyEvidenceImage" src="assets/evidence/strategy-price-discount.png" alt="가격 할인 전략이 선택된 판매 전략 입력 화면" loading="lazy">
+                </div>
+                <figcaption id="strategyEvidenceCaption">가격 할인 선택 · 할인율과 예상 판매량 입력 화면</figcaption>
+                <div class="strategy-image-tabs" role="group" aria-label="전략 입력 화면 예시 전환">
+                  <button type="button" class="active" aria-pressed="true" data-image="assets/evidence/strategy-price-discount.png" data-alt="가격 할인 전략이 선택된 판매 전략 입력 화면" data-caption="가격 할인 선택 · 할인율과 예상 판매량 입력 화면">가격 할인</button>
+                  <button type="button" aria-pressed="false" data-image="assets/evidence/strategy-product-placement.png" data-alt="상품 노출 전략이 선택되고 노출 위치를 지정하는 판매 전략 입력 화면" data-caption="상품 노출 선택 · 노출 위치와 예상 판매량 입력 화면">상품 노출</button>
+                  <button type="button" aria-pressed="false" data-image="assets/evidence/strategy-additional-purchase.png" data-alt="추가 매입 전략에서 수량, 발주 예정일, 입고 소요일을 입력하는 화면" data-caption="추가 매입 선택 · 추가 수량과 발주·입고 조건 입력 화면">추가 매입</button>
+                </div>
+              </figure>
+              <div class="strategy-choice-list" aria-label="전략별 조치와 판단 기준">
+                <article class="strategy-choice"><span>01</span><div><h2>가격 할인</h2><strong>할인율 · 판매 촉진 · 매출총이익</strong><p>할인율과 예상 판매량을 조정하고, 판매 증가 가능성과 이익 감소를 함께 확인합니다.</p></div></article>
+                <article class="strategy-choice"><span>02</span><div><h2>온라인 기획전</h2><strong>기획전 참여 · 할인 조건 · 예상 판매량</strong><p>온라인 행사와 연계한 노출·할인안을 검토하고, 행사 적용 시 예상 판매량을 가정합니다.</p></div></article>
+                <article class="strategy-choice"><span>03</span><div><h2>상품 노출</h2><strong>노출 위치 · 노출 강화 · 판매 반응</strong><p>상세 페이지나 매장 등 노출 위치를 선택하고, 노출 변화에 따른 판매량을 입력합니다.</p></div></article>
+                <article class="strategy-choice"><span>04</span><div><h2>라이브 노출</h2><strong>방송 노출 · 단기 판매 촉진</strong><p>라이브 방송에 상품을 소개하는 운영안을 가정하고, 방송 후 예상 판매량과 재고를 살펴봅니다.</p></div></article>
+                <article class="strategy-choice"><span>05</span><div><h2>추가 매입</h2><strong>추가 수량 · 발주 예정일 · 입고 소요일</strong><p>추가 매입 수량과 발주·입고 조건을 설정해 입고 시점에 맞는 공급 가능성을 검토합니다.</p></div></article>
+              </div>
             </div></div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-15" data-index="14" data-title="전략 계산">
-          <div class="story-inner"><div class="section-meta"><span>핵심 기능 05 · 전략 계산</span><b>15</b></div>
-            <header class="story-heading"><h1>판매량 <em>26.2% 증가</em>에도<br>매출총이익은 <em>1.5% 감소</em></h1><p>재고 과다 상품에 10% 할인, 예상 판매량을 634개에서 800개로 바꿔 현재 운영안과 비교했습니다.</p></header>
-            <div class="story-body"><div class="split feature-split">
-              <figure class="evidence-frame"><img src="assets/evidence/image10.png" alt="현재 운영과 가격 할인 전략 손익 비교" loading="lazy"><figcaption>예상 매출·매출총이익·잔여 재고를 같은 기준으로 계산</figcaption></figure>
-              <div class="metric-stack"><article class="metric-card"><strong>+77.4만 원</strong><span>예상 매출 증가</span><small>+13.6%</small></article><article class="metric-card negative"><strong>−3.94만 원</strong><span>예상 매출총이익 차이</span><small>−1.5%</small></article><article class="metric-card"><strong>813개</strong><span>이익 보존 필요 판매량</span><small>입력값 800개보다 13개 많음</small></article><div class="callout"><strong>매출보다 이익 중심 판단</strong><p>166개를 더 팔아도 할인 폭 때문에 이익이 줄 수 있음을 실행 전에 확인합니다.</p></div></div>
+        <section class="story-section" id="slide-12" data-index="11" data-title="전략 계산">
+          <div class="story-inner"><div class="section-meta"><span>핵심 기능 05 · 전략 계산</span><b>12</b></div>
+            <header class="story-heading"><h1>추가 매입 1,000개,<br>예상 매출총이익 <em>+4,598만 원</em></h1><p>현재 재고 1,000개에서 1,000개를 추가 매입하는 시나리오를 기준안과 비교했습니다.</p></header>
+            <div class="story-body"><div class="split calculation-evidence-split">
+              <figure class="evidence-frame calculation-evidence-frame">
+                <div class="calculation-image-wrap">
+                  <img src="assets/evidence/strategy-calculation-extra-purchase.png?v=20261109-strategy-calculation" alt="현재 운영안과 추가 매입안을 예상 판매량, 발주·입고 조건, 예상 매출총이익 및 잔여 재고로 비교한 화면" loading="lazy">
+                  <span class="calculation-highlight calculation-highlight-units"><b>01</b></span>
+                  <span class="calculation-highlight calculation-highlight-supply"><b>02</b></span>
+                  <span class="calculation-highlight calculation-highlight-result"><b>03</b></span>
+                </div>
+                <figcaption>추가 매입 1,000개 · 발주일 2020-08-31 · 리드타임 1일</figcaption>
+              </figure>
+              <div class="calculation-explanations">
+                <article><span>01</span><div><h2>판매량 가정 비교</h2><strong>기준안 100개 → 추가 매입안 2,000개</strong><p>현재 운영 유지와 선택 전략의 30일 예상 판매량을 비교합니다.</p></div></article>
+                <article><span>02</span><div><h2>공급 조건 반영</h2><strong>현재고 1,000개 + 추가 매입 1,000개</strong><p>발주일 8월 31일, 입고 소요일 1일을 적용해 9월 1일 입고로 계산합니다.</p></div></article>
+                <article><span>03</span><div><h2>예상 손익·잔여 재고</h2><strong>예상 매출총이익 242만 원 → 4,840만 원</strong><p>차이는 +4,598만 원이며, 예상 매출은 390만 원 → 7,800만 원, 잔여 재고는 900개 → 0개입니다.</p></div></article>
+                <p class="calculation-note">화면의 판매량·재고·손익은 입력 조건에 따른 시나리오 추정치이며 실제 판매나 확정 매입 결과가 아닙니다.</p>
+              </div>
             </div></div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-16" data-index="15" data-title="판단과 회고">
-          <div class="story-inner"><div class="section-meta"><span>판단과 회고</span><b>16</b></div>
+        <section class="story-section" id="slide-13" data-index="12" data-title="판단과 회고">
+          <div class="story-inner"><div class="section-meta"><span>판단과 회고</span><b>13</b></div>
             <header class="story-heading"><h1>선택 이유와 당시 숫자를<br><em>함께 남긴다</em></h1><p>결정 이후 실행 계획과 입고·행사 결과를 연결하고, 예상과 실제 차이를 다음 판단의 근거로 바꿉니다.</p></header>
-            <div class="story-body"><div class="decision-cycle">
+            <div class="story-body">
+              <div class="decision-evidence-grid">
+                <figure><img src="assets/evidence/decision-review-record.png?v=20261109-decision-review" alt="저장된 세 가지 판단과 각 판단의 사후 판매·재고 회고 기록 화면" loading="lazy"><figcaption>판단 기록과 이후 판매 결과를 함께 확인</figcaption></figure>
+                <figure><img src="assets/evidence/execution-plan-record.png?v=20261109-decision-review" alt="저장한 판단에 발주 예정일과 수량, 예상 입고일 및 실행 메모를 연결하는 입력 화면" loading="lazy"><figcaption>판단에 발주·입고 실행 계획 연결 · 현재 저장된 실행 계획 없음</figcaption></figure>
+              </div>
+              <div class="decision-cycle">
               <article><span>01</span><h3>당시 근거 저장</h3><strong>기준일 · 판매 · 재고 · 예상 손익</strong><p>선택한 전략과 이유를 당시 숫자와 고정해 나중에도 같은 기준으로 확인합니다.</p></article>
               <article><span>02</span><h3>계획·실행 연결</h3><strong>발주 · 입고 · 프로모션 이력</strong><p>예정일과 실제 입고, 행사 기간과 결과, 진행 상태 변경을 이어 기록합니다.</p></article>
               <article><span>03</span><h3>이후 결과 확인</h3><strong>예상값 ↔ 실제값</strong><p>판매량·재고·매출총이익 차이를 비교해 어떤 가정이 맞고 틀렸는지 회고합니다.</p></article>
-            </div><div class="roadmap"><span>DECISION TRACEABILITY</span><strong>판단 근거 → 실행 → 결과를 하나의 기록으로 연결</strong></div></div>
+              </div><div class="roadmap"><span>DECISION TRACEABILITY</span><strong>판단 근거 → 실행 → 결과를 하나의 기록으로 연결</strong></div>
+            </div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-17" data-index="16" data-title="다음 시즌 기획">
-          <div class="story-inner"><div class="section-meta"><span>다음 시즌 기획</span><b>17</b></div>
-            <header class="story-heading"><h1>유사 상품 여러 종의<br><em>두 시즌 흐름을 비교한다</em></h1><p>한 상품의 누적 판매가 아니라 상품군 2–5종의 지난 시즌과 올해 흐름을 나란히 보고 기획 후보와 준비 물량을 기록합니다.</p></header>
-            <div class="story-body"><div class="split season-layout">
-              <div class="chart-panel"><div class="chart-legend"><span><i class="past"></i>지난 시즌</span><span><i class="current"></i>올해</span></div><div class="line-chart" aria-label="지난 시즌과 올해 판매 흐름 비교 그래프"><svg viewBox="0 0 620 280" role="img"><g class="grid-lines"><line x1="40" y1="40" x2="600" y2="40"/><line x1="40" y1="105" x2="600" y2="105"/><line x1="40" y1="170" x2="600" y2="170"/><line x1="40" y1="235" x2="600" y2="235"/></g><polyline class="past-line" points="40,210 120,172 200,110 280,70 360,92 440,145 520,188 600,214"/><polyline class="current-line" points="40,226 120,194 200,148 280,98 360,66 440,85 520,128 600,172"/></svg></div><p>주차별 판매 속도와 피크 시점, 시즌 후반 둔화를 한 화면에서 비교합니다.</p></div>
-              <div class="stack"><article class="info-card"><span class="card-number">01</span><h3>지난 시즌</h3><strong class="keyline">판매 패턴 기준선</strong><p>주차별 판매량과 피크 시점, 시즌 후반 둔화 구간을 확인합니다.</p></article><article class="info-card"><span class="card-number">02</span><h3>올해 흐름</h3><strong class="keyline">속도 · 증감률 · 동종 순위</strong><p>전년 기준선과 현재 수요 방향의 변화 폭을 봅니다.</p></article><article class="info-card"><span class="card-number">03</span><h3>준비 물량</h3><strong class="keyline">기획 후보 · 목표 수량 · 이유</strong><p>후보 상품과 예상 준비 물량을 근거 수치와 함께 저장합니다.</p></article></div>
+        <section class="story-section" id="slide-14" data-index="13" data-title="다음 시즌 기획">
+          <div class="story-inner"><div class="section-meta"><span>다음 시즌 기획</span><b>14</b></div>
+            <header class="story-heading"><h1>판매 흐름을 읽고<br>다음 시즌 물량을 <em>기획한다</em></h1><p>시즌 비교부터 판매 추정과 판단 회고까지, 다음 시즌 준비에 필요한 핵심 기능을 살펴봅니다.</p></header>
+            <div class="story-body"><div class="split season-feature-layout">
+              <figure class="evidence-frame season-feature-evidence">
+                <div class="season-image-wrap"><img id="seasonEvidenceImage" src="assets/evidence/season-planning-comparison.png?v=20261109-season-planning" alt="유사 상품의 지난 시즌과 올해 주차별 판매량을 비교하고 기획 후보와 준비 물량을 검토하는 화면" loading="eager"></div>
+                <figcaption id="seasonEvidenceCaption">시즌 판매 비교 · 상품군을 선택해 주차별 판매 흐름과 기획 후보를 확인</figcaption>
+                <div class="strategy-image-tabs season-image-tabs" role="group" aria-label="다음 시즌 기획 기능 화면 전환">
+                  <button type="button" class="active" aria-pressed="true" data-image="assets/evidence/season-planning-comparison.png?v=20261109-season-planning" data-alt="유사 상품의 지난 시즌과 올해 주차별 판매량을 비교하고 기획 후보와 준비 물량을 검토하는 화면" data-caption="시즌 판매 비교 · 상품군을 선택해 주차별 판매 흐름과 기획 후보를 확인" data-number="01 / 04" data-heading="시즌 판매 비교·후보 선정" data-keywords="유사 상품 2–5종 · 주차별 판매량 · 준비 물량" data-description="섹션과 상품 종류를 고르고 지난 시즌과 올해 흐름을 비교합니다. 기획 후보를 선택해 다음 시즌 목표 물량을 기록합니다.">시즌 비교</button>
+                  <button type="button" aria-pressed="false" data-image="assets/evidence/season-sales-estimate.png?v=20261109-season-planning" data-alt="최근 판매 속도 유지 또는 지난해 계절 보정으로 9월 예상 판매량과 실제 판매량을 비교하고 상품별 재고 위험을 확인하는 화면" data-caption="판매 추정·실제 비교 · 추정 방식과 실제 판매, 상품별 재고 위험 확인" data-number="02 / 04" data-heading="판매량 추정·재고 위험" data-keywords="최근 14일 속도 · 계절 보정 · 실제 판매 비교" data-description="최근 판매 속도 유지와 지난해 계절 보정 방식으로 판매량을 추정하고 실제 결과와 비교합니다. 상품별 판매 가능량과 재고 부족 위험을 확인합니다.">판매 추정</button>
+                  <button type="button" aria-pressed="false" data-image="assets/evidence/season-decision-review.png?v=20261109-season-planning" data-alt="8월 31일 재고 판단 유형별로 판단 전후 일평균 판매와 가상 재고 변화를 회고하는 화면" data-caption="판단 유형별 사후 회고 · 판단 전후 판매 속도와 가상 재고 흐름 비교" data-number="03 / 04" data-heading="판단 유형별 사후 회고" data-keywords="판정 유형 · 판단 전후 판매 · 가상 재고 변화" data-description="재고 유형별로 판단 전후 일평균 판매와 후속 판매를 비교합니다. 실제 재고가 아니라 판단 당시 가정한 가상 재고 흐름을 함께 살펴봅니다.">판단 회고</button>
+                  <button type="button" aria-pressed="false" data-image="assets/evidence/season-category-flow.png?v=20261109-season-planning" data-alt="상품군별 최근 30일, 직전 30일 판매량과 동일 상품의 지난 시즌 판매를 비교하는 화면" data-caption="상품군 판매 흐름 · 최근 30일과 직전 30일, 동일 상품의 지난 시즌 비교" data-number="04 / 04" data-heading="상품군 판매 흐름" data-keywords="최근 30일 · 직전 30일 · 동일 상품 지난 시즌" data-description="상품 종류별 판매량과 상품 수를 집계해 최근 흐름을 직전 기간 및 동일 상품의 지난 시즌과 비교합니다. 다음 기획의 수요 방향을 파악하는 참고 자료입니다.">상품군 흐름</button>
+                </div>
+              </figure>
+              <article class="season-feature-detail" aria-live="polite">
+                <span id="seasonFeatureNumber">01 / 04</span>
+                <h2 id="seasonFeatureHeading">시즌 판매 비교·후보 선정</h2>
+                <strong id="seasonFeatureKeywords">유사 상품 2–5종 · 주차별 판매량 · 준비 물량</strong>
+                <p id="seasonFeatureDescription">섹션과 상품 종류를 고르고 지난 시즌과 올해 흐름을 비교합니다. 기획 후보를 선택해 다음 시즌 목표 물량을 기록합니다.</p>
+                <small>화면 아래 버튼을 눌러 기능별 예시를 확인하세요.</small>
+              </article>
             </div></div>
           </div>
         </section>
 
-        <section class="story-section" id="slide-18" data-index="17" data-title="핵심 코드">
-          <div class="story-inner"><div class="section-meta"><span>구현 · 핵심 코드</span><b>18</b></div>
+        <section class="story-section" id="slide-15" data-index="14" data-title="핵심 코드">
+          <div class="story-inner"><div class="section-meta"><span>구현 · 핵심 코드</span><b>15</b></div>
             <header class="story-heading"><h1>핵심 계산은<br><em>서버에서 교차 검증한다</em></h1><p>화면 입력값을 그대로 믿지 않고 매출총이익, 날짜별 재고 공백, 동종 순위와 발주 검토량을 서버에서 다시 계산합니다.</p></header>
             <div class="story-body"><div class="code-grid">
               <article><div class="code-title"><span>01</span>매출총이익 검증</div><pre><code>price = round(unit_price *
@@ -231,20 +341,23 @@ review_units = max(0,
           </div>
         </section>
 
-        <section class="story-section" id="slide-19" data-index="18" data-title="확장한 역량">
-          <div class="story-inner"><div class="section-meta"><span>프로젝트를 통해 확장한 역량</span><b>19</b></div>
+        <section class="story-section" id="slide-16" data-index="15" data-title="확장한 역량">
+          <div class="story-inner"><div class="section-meta"><span>프로젝트 개발을 통해 확장한 역량</span><b>16</b></div>
             <header class="story-heading"><h1>MD 업무 이해를 데이터 분석과<br><em>AI 제품 기획 역량으로 확장하다</em></h1><p>판매·재고 확인을 넘어 실행 전 손익 비교, 실행 후 회고, 다음 시즌 기획까지 이어지는 업무 도구를 직접 설계하고 검증했습니다.</p></header>
             <div class="story-body"><div class="grid grid-2 growth-grid">
               <article class="info-card"><span class="card-number">01</span><h3>업무 문제 구조화</h3><strong class="keyline">현장 경험 → 계산 가능한 기준</strong><p>흩어진 판매·재고·입고 정보를 우선순위, 소진 예상일, 매출총이익 지표로 바꿨습니다.</p></article>
               <article class="info-card"><span class="card-number">02</span><h3>데이터 분석 역량</h3><strong class="keyline">원본 거래 → 상품별 인사이트</strong><p>3,100만 건의 거래를 상품·일자별로 집계해 동종 순위, 판매 변화, 시즌 흐름을 분석했습니다.</p></article>
               <article class="info-card"><span class="card-number">03</span><h3>AI 협업 개발 역량</h3><strong class="keyline">요구사항 → 구현 → 오류 검증</strong><p>기능과 계산 규칙을 직접 설계하고 AI로 코드를 구현한 뒤 잘못된 권고와 데이터 혼입을 테스트했습니다.</p></article>
               <article class="info-card"><span class="card-number">04</span><h3>제품 기획 역량</h3><strong class="keyline">분석 기능 → 실제 업무 흐름</strong><p>상품 선별, 전략 비교, 판단 기록, 회고, 다음 시즌 준비를 하나의 사용자 여정으로 연결했습니다.</p></article>
-            </div><blockquote>현장의 문제를 데이터로 정의하고, 판단 기준과 UX를 설계하며, AI와 함께 실제로 작동하는 제품을 만들고 검증할 수 있게 되었습니다.</blockquote></div>
+            </div><blockquote>현장의 문제를 데이터로 정의하고, 판단 기준과 UX를 설계하며, AI와 함께 실제로 작동하는 프로그램 개발과 검증을 하였습니다.</blockquote></div>
           </div>
         </section>
       </div>
     </main>
   </div>
-  <script src="app.js?v=20261109-strategy-image"></script>
+  <dialog class="image-lightbox" id="imageLightbox" aria-label="이미지 확대 보기">
+    <img alt="" tabindex="0">
+  </dialog>
+  <script src="app.js?v=20261109-strategy-options"></script>
 </body>
 </html>

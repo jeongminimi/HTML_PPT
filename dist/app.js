@@ -1,8 +1,7 @@
 const groups = [
   { label: "소개", slides: ["표지", "기획 의도", "개발 기록"] },
-  { label: "데이터 설계", slides: ["원본 데이터", "분석·정리 과정", "분석 질문", "발견한 수치"] },
-  { label: "프로그램 구조", slides: ["프로그램 화면", "다음 활용", "핵심 기능 안내"] },
-  { label: "핵심 기능", slides: ["오늘의 할 일", "전체 상품", "재고 판단", "전략 입력", "전략 계산", "판단과 회고", "다음 시즌 기획"] },
+  { label: "데이터 설계", slides: ["데이터 파이프라인", "사례 선정·판단 검증", "발견한 수치"] },
+  { label: "핵심 기능", slides: ["MD 판단 흐름", "오늘의 할 일", "전체 상품", "재고 판단", "전략 입력", "전략 계산", "판단과 회고", "다음 시즌 기획"] },
   { label: "구현과 정리", slides: ["핵심 코드", "확장한 역량"] },
 ];
 
@@ -96,7 +95,88 @@ menuBtn.addEventListener("click", () => {
   }
 });
 scrim.addEventListener("click", closeMenu);
-window.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+const strategyEvidenceImage = document.querySelector("#strategyEvidenceImage");
+const strategyEvidenceCaption = document.querySelector("#strategyEvidenceCaption");
+document.querySelectorAll(".strategy-image-tabs button").forEach((button) => {
+  button.addEventListener("click", () => {
+    strategyEvidenceImage.src = button.dataset.image;
+    strategyEvidenceImage.alt = button.dataset.alt;
+    strategyEvidenceImage.parentElement.setAttribute("aria-label", "이미지 확대 보기: " + strategyEvidenceImage.alt);
+    strategyEvidenceCaption.textContent = button.dataset.caption;
+    document.querySelectorAll(".strategy-image-tabs button").forEach((option) => {
+      const selected = option === button;
+      option.classList.toggle("active", selected);
+      option.setAttribute("aria-pressed", String(selected));
+    });
+  });
+});
+const seasonEvidenceImage = document.querySelector("#seasonEvidenceImage");
+const seasonEvidenceCaption = document.querySelector("#seasonEvidenceCaption");
+const seasonFeatureNumber = document.querySelector("#seasonFeatureNumber");
+const seasonFeatureHeading = document.querySelector("#seasonFeatureHeading");
+const seasonFeatureKeywords = document.querySelector("#seasonFeatureKeywords");
+const seasonFeatureDescription = document.querySelector("#seasonFeatureDescription");
+document.querySelectorAll(".season-image-tabs button").forEach((button) => {
+  button.addEventListener("click", () => {
+    seasonEvidenceImage.src = button.dataset.image;
+    seasonEvidenceImage.alt = button.dataset.alt;
+    seasonEvidenceImage.parentElement.setAttribute("aria-label", "이미지 확대 보기: " + seasonEvidenceImage.alt);
+    seasonEvidenceCaption.textContent = button.dataset.caption;
+    seasonFeatureNumber.textContent = button.dataset.number;
+    seasonFeatureHeading.textContent = button.dataset.heading;
+    seasonFeatureKeywords.textContent = button.dataset.keywords;
+    seasonFeatureDescription.textContent = button.dataset.description;
+    document.querySelectorAll(".season-image-tabs button").forEach((option) => {
+      const selected = option === button;
+      option.classList.toggle("active", selected);
+      option.setAttribute("aria-pressed", String(selected));
+    });
+  });
+});
+const imageLightbox = document.querySelector("#imageLightbox");
+const imageLightboxImage = imageLightbox.querySelector("img");
+const imageSurfaceSelector = ".product-image-wrap, .stock-image-wrap, .strategy-image-wrap, .calculation-image-wrap, .season-image-wrap";
+document.querySelectorAll(".story-section img").forEach((image) => {
+  const surface = image.closest(imageSurfaceSelector) || image;
+  surface.classList.add("zoomable-image");
+  surface.tabIndex = 0;
+  surface.setAttribute("role", "button");
+  surface.setAttribute("aria-label", "이미지 확대 보기: " + image.alt);
+});
+function openImageLightbox(surface) {
+  const image = surface instanceof HTMLImageElement ? surface : surface.querySelector("img");
+  if (!image) return;
+  imageLightboxImage.src = image.currentSrc || image.src;
+  imageLightboxImage.alt = image.alt;
+  imageLightboxImage.setAttribute("role", "button");
+  imageLightboxImage.setAttribute("aria-label", "확대 이미지 닫기: " + image.alt);
+  imageLightbox.showModal();
+}
+document.addEventListener("click", (event) => {
+  if (!(event.target instanceof Element)) return;
+  const surface = event.target.closest(".zoomable-image");
+  if (surface) openImageLightbox(surface);
+});
+document.addEventListener("keydown", (event) => {
+  if (!(event.target instanceof HTMLElement) || !event.target.matches(".zoomable-image")) return;
+  if (event.key !== "Enter" && event.key !== " ") return;
+  event.preventDefault();
+  openImageLightbox(event.target);
+});
+imageLightboxImage.addEventListener("click", () => imageLightbox.close());
+imageLightboxImage.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  event.preventDefault();
+  imageLightbox.close();
+});
+imageLightbox.addEventListener("click", (event) => {
+  if (event.target === imageLightbox) imageLightbox.close();
+});
+window.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  closeMenu();
+  if (imageLightbox.open) imageLightbox.close();
+});
 window.addEventListener("keydown", (event) => {
   if (!usesPagedNavigation() || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
   if (event.target instanceof HTMLElement && event.target.closest("input, textarea, select, button, [contenteditable='true']")) return;
